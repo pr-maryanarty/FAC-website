@@ -81,8 +81,9 @@ body.dark .wrapper div {
     object-fit: cover;
 }
 .wrapper img:hover {
-    transform: scale(1.4);
+    transform: scale(1.6);
     border-radius: 1rem;
+    object-fit: fill;
 }
 .wrapper div {
     border: 1px solid #000000;
