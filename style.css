@@ -1,39 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
 * {
-    margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 body {
-    font-family: sans-serif;
+    font-family: "Urbanist", sans-serif;
     font-size: 16px;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     min-height: 100vh;
+    transition: background 0.2s linear;
+}
+
+body.dark {
+    background-color: #343642;
+}
+
+body.dark h1,
+body.dark {
+    color: rgb(245, 237, 233);
+}
+body.dark .container div {
+    border: none;
+}
+body.dark .wrapper div {
+    border: 1px solid #ffffff;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: rgb(0, 0, 0);
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(21px);
 }
 
 .wrapper {
+    display: none;
+}
+.wrapper.show {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: start;
-    padding: 20px, 10px;
-
+    align-items: start, flex-end;
+    padding: 1rem;
     margin: 0 auto;
     gap: 3rem;
-    border-radius: 1rem;
-    background-color: rgb(235, 212, 228);
 }
+
 .wrapper img {
-    border-radius: 1rem;
     width: 100%;
-    max-width: 400px;
-    height: 300px;
+    max-width: 300px;
+    height: 250px;
     object-fit: cover;
-    box-shadow: 10px 5px 5px rgb(151, 141, 141);
 }
-div {
-    stroke: rgb(0, 0, 0);
-    stroke-width: 1;
-    stroke-linecap: butt;
-    stroke-dasharray: 0;
+.wrapper img:hover {
+    transform: scale(1.4);
+    border-radius: 1rem;
+}
+.wrapper div {
+    border: 1px solid #000000;
+}
+[class^="box-"] {
+    background-color: skyblue;
+
+    display: grid;
+    place-items: center;
+}
+.container {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "A A A A   B B B B   B B B B"
+        "A A A A   B B B B   B B B B"
+        "C C C C   C C C C   C C C C";
+}
+.box-1 {
+    grid-area: A;
+}
+.box-2 {
+    grid-area: B;
+}
+.box-3 {
+    grid-area: C;
+}
+.project_card {
+    height: 700px;
+    padding: 1rem;
+}
+.answers p {
+    padding: 1rem;
+    width: 90%;
+}
+
+.project_card p {
+    max-width: 300px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.project_card .button-links {
+    display: flex;
+    justify-content: space-around;
+    border: none;
+}
+button {
+    width: 5rem;
+    height: 3em;
+    border-radius: 1rem;
+    background-color: rgb(33, 174, 230);
+    border: hidden;
+}
+button:hover {
+    background-color: rgb(97, 192, 230);
+}
+hgroup {
+    text-align: center;
+}
+footer {
+    text-align: center;
+    margin: 1rem;
+}
+a {
+    text-decoration: none;
+    color: #000000;
 }
